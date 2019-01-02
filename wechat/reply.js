@@ -38,7 +38,7 @@ const reply = async (ctx, next) => {
           title: movie.title,
           description: movie.summary,
           picUrl: movie.poster.indexOf('http') > -1 ? movie.poster : (config.baseUrl + '/upload/' + movie.poster),
-          url: config.baseUrl + '/movie/' + movie._id
+          url: config.baseUrl + 'movie/' + movie._id
         })
       })
     } else {
@@ -377,7 +377,7 @@ const reply = async (ctx, next) => {
       }
 
       if (movies.length) {
-        movies = movies.slice(0, 4)
+        movies = movies.slice(0, 2)
 
         movies.forEach((movie) => {
           reply.push({
